@@ -1,15 +1,3 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
 var upperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 var arrUpperChar = upperChar.split('')
 
@@ -19,8 +7,10 @@ var arrLowerChar = lowerChar.split('')
 var specialChar = '!@#$%^&*()+|~'
 var arrSpecialChar = specialChar.split('')
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", function() {
+
+
+
+function generatePassword () {
   var initialHello = alert('Hello! First we need some answers!')
 
   var passwordLenth = prompt('What is your desired length of password? (Min char-8 Max-128)')
@@ -50,7 +40,23 @@ generateBtn.addEventListener("click", function() {
   } 
     return newPassword
 
-});
+}
 
+
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 writePassword()
